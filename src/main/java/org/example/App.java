@@ -87,7 +87,7 @@ public class App {
 
     public static void task_6(Integer numbersOfCoins) {
         /**
-         * Задание №6:
+         * Задание №6*:
          * Закончить фразу “У меня в кармане...” одним из возможных продолжений: “n монет”, “n монета”, “n монеты” 0 <= n <= 100.
          * numbersOfCoins - число монет.
          */
