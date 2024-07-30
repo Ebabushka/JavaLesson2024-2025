@@ -75,7 +75,7 @@ public class App {
                 if (D > 0) {
                     Double x1 = (-b + Math.sqrt(D)) / (2 * a);
                     Double x2 = (-b - Math.sqrt(D)) / (2 * a);
-                    System.out.printf(String.format("Дискриминант: D = %s; \nКорни квадратного уравнения: x1 = %s, x2 = %s.", D, x1, x2));
+                    System.out.printf(String.format("Дискриминант: D = %s; \nКорни квадратного уравнения: \nx1 = %s, \nx2 = %s.", D, x1, x2));
                 } else {
                     if (D < 0) {
                         System.out.println("Нет действительных корней");
