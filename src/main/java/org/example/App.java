@@ -34,7 +34,6 @@ public class App {
      * x, y - Корни уравнений.
      */
     public static Double functionValue(Integer x) {
-
         Double y = ((4 * Math.pow((x - 5), 2) + 7 * x - 10) / (Math.pow(x, 4) + 1));
         return y;
     }
@@ -60,7 +59,19 @@ public class App {
     }
 
     /**
-     * Задание №5*: Решить квадратное уравнение a*x^2 + b*x + c = 0 имея a,b,c ответ вывести в строку.
+     * Задание №5: Существует ли треугольник по трём сторонам.
+     * a, b, c - стороны треугольника;
+     */
+    public static String existenceTriangle(Double a, Double b, Double c) {
+        if (a < b + c && b < a + c && c < a + b) {
+            return String.format("Треугольник существует");
+        } else {
+            return String.format("Треугольник не существует");
+        }
+    }
+
+    /**
+     * Задание №6*: Решить квадратное уравнение a*x^2 + b*x + c = 0 имея a,b,c ответ вывести в строку.
      * a, b - коэфициенты квадратного уравнения; с - свободный член. D - дискриминант.
      */
     public static String quadraticEquation(Double a, Double b, Double c) {
@@ -85,7 +96,7 @@ public class App {
     }
 
     /**
-     * Задание №6*:
+     * Задание №7*:
      * Закончить фразу “У меня в кармане...” одним из возможных продолжений: “n монет”, “n монета”, “n монеты” 0 <= n <= 100.
      * numbersOfCoins - число монет.
      */
@@ -102,7 +113,7 @@ public class App {
     }
 
     /**
-     * Задание №7*: Упорядочить три числа по возрастанию.
+     * Задание №8*: Упорядочить три числа по возрастанию.
      * a, b, c - числа в произвольном порядке;
      * minValue - минимальное значение; averageValue - среднее значение, maxValue - максимальное значение.
      */
@@ -117,7 +128,6 @@ public class App {
                 minValue = b;
                 averageValue = c;
             }
-            return String.format("Задание №7*: \nОтвет в порядке возрастания: %s, %s, %s", minValue, averageValue, maxValue);
         } else {
             if (b > a && b > c) {
                 maxValue = b;
@@ -138,8 +148,8 @@ public class App {
                     averageValue = b;
                 }
             }
-            return String.format("Ответ в порядке возрастания: %s, %s, %s", minValue, averageValue, maxValue);
         }
+        return String.format("Ответ в порядке возрастания: %s, %s, %s", minValue, averageValue, maxValue);
     }
 
     public static void main(String[] args) {
@@ -147,8 +157,9 @@ public class App {
         System.out.println(String.format("Задание №2: \nОтвет: %s.", whatIsCalendarYear(2007)));
         System.out.println(String.format("Задание №3: \nОтвет: y = %.3f.", functionValue(25)));
         System.out.println(String.format("Задание №4: \nОтвет: %s.", defineQuarter(2.1, 4.4)));
-        System.out.println(String.format("Задание №5*: \nОтвет: %s.", quadraticEquation(4.0, 8.0, -5.0)));
-        System.out.println(String.format("Задание №6*: \nОтвет: %s.", declensionNumber(4)));
-        System.out.println(String.format("Задание №6*: %s.", arrangeTheNumbers(12, 6, 9)));
+        System.out.println(String.format("Задание №5: \nОтвет: %s.", existenceTriangle(2.5, 4.0, 5.2)));
+        System.out.println(String.format("Задание №6*: \nОтвет: %s.", quadraticEquation(4.0, 8.0, -5.0)));
+        System.out.println(String.format("Задание №7*: \nОтвет: %s.", declensionNumber(4)));
+        System.out.println(String.format("Задание №8*: \n%s.", arrangeTheNumbers(12, 6, 9)));
     }
 }
