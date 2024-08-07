@@ -143,7 +143,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(String.format("Задание №1: \nОтвет: %s.", minimalNumber(4, 8, 2)));
+        System.out.println(String.format("Задание №1: \nМинимальное значение: %s.", minimalNumber(4, 8, 2)));
         System.out.println(String.format("Задание №2: \nОтвет: %s.", whatIsCalendarYear(2007)));
         System.out.println(String.format("Задание №3: \nОтвет: y = %.3f.", functionValue(25)));
         System.out.println(String.format("Задание №4: \nОтвет: %s.", defineQuarter(2.1, 4.4)));
