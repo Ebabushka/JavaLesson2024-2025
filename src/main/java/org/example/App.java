@@ -20,6 +20,9 @@ public class App {
         return massive;
     }
 
+    /**
+     * Выведение печати масива.
+     */
     public static String printMassive(int[] massive) {
         StringBuilder stringMassive = new StringBuilder();
         for (int i = 0; i < massive.length; i++) {
@@ -32,9 +35,7 @@ public class App {
      * Задание №2: Отсортировать массив с помощью пузырка.
      * swap - Переменная запоминающая минимальное и максимальное значение массива.
      */
-    public static String bubbleSort() {
-        int[] massive = createMassive(5, 1, 20);
-        System.out.println(String.format("Здание №2: \nИсходный массив: %s", printMassive(massive)));
+    public static String bubbleSort(int[] massive) {
         for (int i = 0; i < massive.length - 1; i++) {
             for (int j = 0; j < massive.length - i - 1; j++) {
                 if (massive[j + 1] < massive[j]) {
@@ -44,29 +45,25 @@ public class App {
                 }
             }
         }
-        return String.format("Отсортированный массив: %s", printMassive(massive));
+        return printMassive(massive);
     }
 
     /**
      * Задание №3: Найти сумму всех элементов массива.
      * sumResult - Сумма всех элементов массива.
      */
-    public static String sumElMassive() {
-        int[] massive = createMassive(5, 1, 20);
+    public static int sumElMassive(int[] massive) {
         int sumResult = 0;
         for (int i = 0; i < massive.length; i++) {
             sumResult = sumResult + massive[i];
         }
-        return String.format("Исходный массив: %s \nСумма элементов массива: %s", printMassive(massive), sumResult);
+        return sumResult;
     }
 
     /**
      * Задание №4: Вывести все четные элементы массива.
      */
-
-    public static void evenElMassive() {
-        int[] massive = createMassive(5, 1, 20);
-        System.out.print(String.format("Задание №4: \nИсходный массив: %s\n", printMassive(massive)));
+    public static void evenElMassive(int[] massive) {
         for (int i = 0; i < massive.length; i++) {
             if (massive[i] % 2 == 0) {
                 System.out.println(String.format("Индекс: %s; Четный эл.массива: %s", i, massive[i]));
@@ -80,8 +77,7 @@ public class App {
      * newMassive - Массив с исключенным индексом.
      * delete index - Индекс, который требуется удалить из массива.
      */
-    public static String deleteFirstElMassive() {
-        int[] massive = createMassive(5, 1, 20);
+    public static String deleteFirstElMassive(int[] massive) {
         int[] newMassive = new int[massive.length - 1];
         int deleteIndex = 0;
         for (int i = 0; i < massive.length - 1; i++) {
@@ -93,7 +89,7 @@ public class App {
                 }
             }
         }
-        return String.format("\nИсходный массив: %s\nОтвет: %s", printMassive(massive), printMassive(newMassive));
+        return printMassive(newMassive);
     }
 
     /**
@@ -101,14 +97,13 @@ public class App {
      * massive - Исходный массив;
      * newMassive - Реверсированный массив.
      */
-    public static String reverseMassive() {
-        int[] massive = createMassive(5, 1, 20);
+    public static String reverseMassive(int[] massive) {
         int[] newMassive = new int[massive.length];
         newMassive[0] = massive[massive.length - 1];
         for (int i = 0; i < massive.length - 1; i++) {
             newMassive[massive.length - i - 1] = massive[i];
         }
-        return String.format("\nИсходный массив: %s \nРеверсированный массив: %s", printMassive(massive), printMassive(newMassive));
+        return printMassive(newMassive);
     }
 
     public static void quickSort(int[] massive, int startValue, int endValue) {
@@ -141,9 +136,7 @@ public class App {
     /**
      * Задание №8: Отсортировать массив по возрастанию с помощью быстрой сортировки.
      */
-    public static void quickSortTest() {
-        int[] massive = createMassive(5, 1, 20);
-        System.out.println(String.format("Задание №8: \nИсходный массив: %s", printMassive(massive)));
+    public static void quickSortTest(int[] massive) {
         quickSort(massive, 0, massive.length - 1);
         System.out.println(String.format("Отсортированный массив: %s", printMassive(massive)));
     }
@@ -171,13 +164,15 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(String.format("Задание №1: \nМассив: %s", printMassive(createMassive(5, 1, 20))));
-        System.out.println(String.format(bubbleSort()));
-        System.out.println(String.format("Задание №3: %s", sumElMassive()));
-        evenElMassive();
-        System.out.println(String.format("Задание №5: %s", deleteFirstElMassive()));
-        System.out.println(String.format("Задание №7: %s", reverseMassive()));
-        quickSortTest();
-        System.out.println(String.format("Задание №8: \nОтвет: %s", numericalSequence(2)));
+        System.out.println(String.format("Задание №2: \nОтсортированный массив: %s", bubbleSort(createMassive(5,1,20))));
+        System.out.println(String.format("Задание №3: \nСумма элементов массива: %s", sumElMassive(createMassive(5,1,20))));
+        System.out.println(String.format("Задание №4:"));
+        evenElMassive(createMassive(5,1,20));
+        System.out.println(String.format("Задание №5: \nНовый массив: %s", deleteFirstElMassive(createMassive(5, 1, 20))));
+        System.out.println(String.format("Задание №7: \nРеверсированный массив: %s", reverseMassive(createMassive(5, 1, 20))));
+        System.out.println(String.format("Задание №8:"));
+        quickSortTest(createMassive(5, 1, 20));
+        System.out.println(String.format("Задание №9: \nОтвет: %s", numericalSequence(2)));
     }
 }
 
