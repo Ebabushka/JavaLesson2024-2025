@@ -6,12 +6,13 @@ public class App {
     /**
      * Задание №1: Написать функцию которая принимает 3 значения (длина, минимально-возможное значение массивая,
      * максимально-возможное значение массива) и выводит рандомно сгенерированный массив.
+     *
      * @param length    - Длина массива;
      * @param minNumber - минимально-возможное значение массива;
      * @param maxNumber - максимально-возможное значение массива;
      * @return - возвращает массив рандомных чисел по трем вводным, длине, минимальному и максимальному значению массива.
      */
-    public static int[] createMassive(int length, int minNumber, int maxNumber) {
+    public static int[] generateArray(int length, int minNumber, int maxNumber) {
         int[] massive = new int[length];
         Random random = new Random();
         for (int i = 0; i < length; i++) {
@@ -22,10 +23,11 @@ public class App {
 
     /**
      * Задание №1.1: Выведение массива на печать.
+     *
      * @param massive - массив случайных чисел, используемый для конвертации формата;
      * @return - возвращает преобразованный в текстовый формат для печати массив.
      */
-    public static String printMassive(int[] massive) {
+    public static String arrayToString(int[] massive) {
         StringBuilder stringMassive = new StringBuilder();
         for (int i = 0; i < massive.length; i++) {
             stringMassive.append(massive[i]).append(" ");
@@ -35,10 +37,11 @@ public class App {
 
     /**
      * Задание №2: Отсортировать массив с помощью пузырка.
+     *
      * @param massive - массив случайных чисел;
      * @return - возвращает отсортированный массив.
      */
-    public static String bubbleSort(int[] massive) {
+    public static int[] bubbleSort(int[] massive) {
         for (int i = 0; i < massive.length - 1; i++) {
             for (int j = 0; j < massive.length - i - 1; j++) {
                 if (massive[j + 1] < massive[j]) {
@@ -48,11 +51,12 @@ public class App {
                 }
             }
         }
-        return printMassive(massive);
+        return massive;
     }
 
     /**
      * Задание №3: Найти сумму всех элементов массива.
+     *
      * @param massive - массив случайных чисел;
      * @return - возвращает сумму элементов массива.
      */
@@ -66,23 +70,36 @@ public class App {
 
     /**
      * Задание №4: Вывести все четные элементы массива.
-     * @param massive - массив случайных чисел.
+     *
+     * @param massive - массив случайных чисел;
+     * @return - возвращает массив четных чисел.
      */
-    public static void evenElMassive(int[] massive) {
+    public static int[] evenElMassive(int[] massive) {
+        int counter = 0;
         for (int i = 0; i < massive.length; i++) {
             if (massive[i] % 2 == 0) {
-                System.out.println(String.format("Индекс: %s; Четный эл.массива: %s", i, massive[i]));
+                counter++;
             }
         }
+        int[] evenMassive = new int[counter];
+        int j = 0;
+        for (int i = 0; i < massive.length; i++) {
+            if (massive[i] % 2 == 0) {
+                evenMassive[j] = massive[i];
+                j++;
+            }
+        }
+        return evenMassive;
     }
 
     /**
      * Задание №5 и №8*: Удалить первый элемент массива / Удалить элемент из массива по индексу.
-     * @param massive - массив случайных чисел;
-     * @param deleteIndex - Индекс массива, который необходимо удалить вместе со значением.
+     *
+     * @param massive     - массив случайных чисел;
+     * @param deleteIndex - Индекс массива, который необходимо удалить вместе со значением;
      * @return - возвращает новый массив, с исключённым из него значением заданного индекса.
      */
-    public static String deleteFirstElMassive(int[] massive, int deleteIndex) {
+    public static int[] deleteFirstElMassive(int[] massive, int deleteIndex) {
         int[] newMassive = new int[massive.length - 1];
         for (int i = 0; i < massive.length - 1; i++) {
             if (i < deleteIndex) {
@@ -93,28 +110,31 @@ public class App {
                 }
             }
         }
-        return printMassive(newMassive);
+        return newMassive;
     }
 
     /**
      * Задание №7: Вывести строку задом наоборот.
-     * @param massive - массив случайных чисел.
-     * @return  - возвращает новый реверсированный массив.
+     *
+     * @param line - Исходная строка;
+     * @return - возвращает отреверсированный формат строки;
      */
-    public static String reverseMassive(int[] massive) {
-        int[] newMassive = new int[massive.length];
-        newMassive[0] = massive[massive.length - 1];
-        for (int i = 0; i < massive.length - 1; i++) {
-            newMassive[massive.length - i - 1] = massive[i];
+    public static String reverseLine(String line) {
+        char[] charMassive = line.toCharArray();
+        for (int i = 0; i < charMassive.length / 2; i++) {
+            char temp = charMassive[i];
+            charMassive[i] = charMassive[charMassive.length - i - 1];
+            charMassive[charMassive.length - i - 1] = temp;
         }
-        return printMassive(newMassive);
+        return new String(charMassive);
     }
 
     /**
      * Задание №8: Отсортировать массив по возрастанию с помощью быстрой сортировки.
-     * @param massive - массив случайных чисел;
+     *
+     * @param massive    - массив случайных чисел;
      * @param startValue - индекс крайнего левого элемента массива;
-     * @param endValue - индекс крайнего правого элемента массива;
+     * @param endValue   - индекс крайнего правого элемента массива;
      */
     public static void quickSort(int[] massive, int startValue, int endValue) {
         int midElMassive = startValue + ((endValue - startValue) / 2);
@@ -145,43 +165,41 @@ public class App {
 
     /**
      * Продолжение задания №8: Отсортировать массив по возрастанию с помощью быстрой сортировки.
+     *
      * @param massive - массив случайных чисел.
      */
-    public static void quickSortTest(int[] massive) {
+    public static void quickSort(int[] massive) {
         quickSort(massive, 0, massive.length - 1);
-        System.out.println(String.format("Отсортированный массив: %s", printMassive(massive)));
+        System.out.println(String.format("Отсортированный массив: %s", arrayToString(massive)));
     }
 
     /**
      * Задание №9: У нас есть последовательност 1+2+3+...+n, определить существует ли такое n, чтобы сумма ряда была кратна числу k,
      * написать функцию, в которую передают только число k и получают ответ: true либо false.
+     *
      * @param k - делитель;
-     * @return - возравщает true либо false в зависимости от того, кратно число k сумме элементов числовой последовательности.
+     * @return - возвращает true при нахождении числа n кратного k;
      */
     public static boolean numericalSequence(int k) {
-        int firstElSequence = 1;
-        int n = 10;
+        int n = 1;
         for (int i = 1; i <= n; i++) {
-            firstElSequence = firstElSequence + i;
+            n = n + i;
+            while (n % k == 0) {
+            }
         }
-        if (firstElSequence % k == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return true;
     }
 
     public static void main(String[] args) {
-        System.out.println(String.format("Задание №1: \nМассив: %s", printMassive(createMassive(5, 1, 20))));
-        System.out.println(String.format("Задание №2: \nОтсортированный массив: %s", bubbleSort(createMassive(5,1,20))));
-        System.out.println(String.format("Задание №3: \nСумма элементов массива: %s", sumElMassive(createMassive(5,1,20))));
-        System.out.println(String.format("Задание №4:"));
-        evenElMassive(createMassive(5,1,20));
-        System.out.println(String.format("Задание №5: \nНовый массив: %s", deleteFirstElMassive(createMassive(5, 1, 20), 0)));
-        System.out.println(String.format("Задание №7: \nРеверсированный массив: %s", reverseMassive(createMassive(5, 1, 20))));
+        System.out.println(String.format("Задание №1: \nМассив: %s", arrayToString(generateArray(5, 1, 20))));
+        System.out.println(String.format("Задание №2: \nОтсортированный массив: %s", arrayToString(bubbleSort(generateArray(5, 1, 20)))));
+        System.out.println(String.format("Задание №3: \nСумма элементов массива: %s", sumElMassive(generateArray(5, 1, 20))));
+        System.out.println(String.format("Задание №4: \nМассив четных чисел: %s", arrayToString(evenElMassive(generateArray(5, 1, 20)))));
+        System.out.println(String.format("Задание №5: \nНовый массив: %s", arrayToString(deleteFirstElMassive(generateArray(5, 1, 20), 0))));
+        System.out.println(String.format("Задание №7: \nРеверсированный массив: %s", reverseLine("нодногя")));
         System.out.println(String.format("Задание №8:"));
-        quickSortTest(createMassive(5, 1, 20));
-        System.out.println(String.format("Задание №9: \nОтвет: %s", numericalSequence(2)));
+        quickSort(generateArray(5, 1, 20));
+        System.out.println(String.format("Задание №9: \nОтвет: %s", numericalSequence(15)));
     }
 }
 
