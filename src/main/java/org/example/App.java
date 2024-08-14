@@ -99,7 +99,7 @@ public class App {
      * @param deleteIndex - Индекс массива, который необходимо удалить вместе со значением;
      * @return - возвращает новый массив, с исключённым из него значением заданного индекса.
      */
-    public static int[] deleteFirstElMassive(int[] massive, int deleteIndex) {
+    public static int[] deleteIndexArray(int[] massive, int deleteIndex) {
         int[] newMassive = new int[massive.length - 1];
         for (int i = 0; i < massive.length - 1; i++) {
             if (i < deleteIndex) {
@@ -167,10 +167,11 @@ public class App {
      * Продолжение задания №8: Отсортировать массив по возрастанию с помощью быстрой сортировки.
      *
      * @param massive - массив случайных чисел.
+     * @return
      */
-    public static void quickSort(int[] massive) {
+    public static int[] quickSort(int[] massive) {
         quickSort(massive, 0, massive.length - 1);
-        System.out.println(String.format("Отсортированный массив: %s", arrayToString(massive)));
+        return massive;
     }
 
     /**
@@ -195,10 +196,9 @@ public class App {
         System.out.println(String.format("Задание №2: \nОтсортированный массив: %s", arrayToString(bubbleSort(generateArray(5, 1, 20)))));
         System.out.println(String.format("Задание №3: \nСумма элементов массива: %s", sumElMassive(generateArray(5, 1, 20))));
         System.out.println(String.format("Задание №4: \nМассив четных чисел: %s", arrayToString(evenElMassive(generateArray(5, 1, 20)))));
-        System.out.println(String.format("Задание №5: \nНовый массив: %s", arrayToString(deleteFirstElMassive(generateArray(5, 1, 20), 0))));
+        System.out.println(String.format("Задание №5: \nНовый массив: %s", arrayToString(deleteIndexArray(generateArray(5, 1, 20), 0))));
         System.out.println(String.format("Задание №7: \nРеверсированный массив: %s", reverseLine("нодногя")));
-        System.out.println(String.format("Задание №8:"));
-        quickSort(generateArray(5, 1, 20));
+        System.out.println(String.format("Задание №8: \nОтсортированный массив: %s", arrayToString(quickSort(generateArray(5, 1, 20)))));
         System.out.println(String.format("Задание №9: \nОтвет: %s", numericalSequence(15)));
     }
 }
