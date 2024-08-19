@@ -1,6 +1,11 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class App {
+    private static Logger logger = LoggerFactory.getLogger(App.class);
+
     /**
      * Задание №1: Меньшее из трех чисел с помощью if;
      * a, b, c - значения чисел.
@@ -153,13 +158,14 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(String.format("Задание №1: \nМинимальное значение: %s.", minimalNumber(4, 8, 2)));
-        System.out.println(String.format("Задание №2: \nОтвет: %s.", whatIsCalendarYear(2007)));
-        System.out.println(String.format("Задание №3: \nОтвет: y = %.3f.", functionValue(25)));
-        System.out.println(String.format("Задание №4: \nОтвет: %s.", defineQuarter(2.1, 4.4)));
-        System.out.println(String.format("Задание №5: \nОтвет: %s.", existenceTriangle(2.5, 4.0, 5.2)));
-        System.out.println(String.format("Задание №6*: \nОтвет: %s.", quadraticEquation(4.0, 8.0, -5.0)));
-        System.out.println(String.format("Задание №7*: \nОтвет: %s.", declensionNumber(4)));
-        System.out.println(String.format("Задание №8*: \n%s.", arrangeTheNumbers(12, 6, 9)));
+        logger.info(String.format("\nЗадание №1: Минимальное значение: %s.\n", minimalNumber(4, 8, 2)));
+        logger.info(String.format("\nЗадание №2: Ответ: %s.\n", whatIsCalendarYear(2007)));
+        logger.info(String.format("\nЗадание №3: Ответ: y = %.3f.\n", functionValue(25)));
+        logger.info(String.format("\nЗадание №4: Ответ: %s.\n", defineQuarter(2.1, 4.4)));
+        logger.info(String.format("\nЗадание №5: Ответ: %s.\n", existenceTriangle(2.5, 4.0, 5.2)));
+        logger.info(String.format("\nЗадание №6*: Ответ: %s.\n", quadraticEquation(4.0, 8.0, -5.0)));
+        logger.info(String.format("\nЗадание №7*: Ответ: %s.\n", declensionNumber(4)));
+        logger.info(String.format("\nЗадание №8*: %s.\n", arrangeTheNumbers(12, 6, 9)));
     }
 }
+
