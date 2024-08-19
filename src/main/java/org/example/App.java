@@ -2,7 +2,12 @@ package org.example;
 
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class App {
+    private static Logger logger = LoggerFactory.getLogger(App.class);
+
     /**
      * Задание №1: Написать функцию которая принимает 3 значения (длина, минимально-возможное значение массивая,
      * максимально-возможное значение массива) и выводит рандомно сгенерированный массив.
@@ -192,14 +197,14 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(String.format("Задание №1: \nМассив: %s", arrayToString(generateArray(5, 1, 20))));
-        System.out.println(String.format("Задание №2: \nОтсортированный массив: %s", arrayToString(bubbleSort(generateArray(5, 1, 20)))));
-        System.out.println(String.format("Задание №3: \nСумма элементов массива: %s", sumElMassive(generateArray(5, 1, 20))));
-        System.out.println(String.format("Задание №4: \nМассив четных чисел: %s", arrayToString(evenElMassive(generateArray(5, 1, 20)))));
-        System.out.println(String.format("Задание №5: \nНовый массив: %s", arrayToString(deleteIndexArray(generateArray(5, 1, 20), 0))));
-        System.out.println(String.format("Задание №7: \nРеверсированный массив: %s", reverseLine("нодногя")));
-        System.out.println(String.format("Задание №8: \nОтсортированный массив: %s", arrayToString(quickSort(generateArray(5, 1, 20)))));
-        System.out.println(String.format("Задание №9: \nОтвет: %s", numericalSequence(15)));
+        logger.info(String.format("\nЗадание №1: \nМассив: %s\n", arrayToString(generateArray(5, 1, 20))));
+        logger.info(String.format("\nЗадание №2: \nОтсортированный массив: %s\n", arrayToString(bubbleSort(generateArray(5, 1, 20)))));
+        logger.info(String.format("\nЗадание №3: \nСумма элементов массива: %s\n", sumElMassive(generateArray(5, 1, 20))));
+        logger.info(String.format("\nЗадание №4: \nМассив четных чисел: %s\n", arrayToString(evenElMassive(generateArray(5, 1, 20)))));
+        logger.info(String.format("\nЗадание №5: \nНовый массив: %s\n", arrayToString(deleteIndexArray(generateArray(5, 1, 20), 0))));
+        logger.info(String.format("\nЗадание №7: \nРеверсированный массив: %s\n", reverseLine("нодногя")));
+        logger.info(String.format("\nЗадание №8: \nОтсортированный массив: %s\n", arrayToString(quickSort(generateArray(5, 1, 20)))));
+        logger.info(String.format("\nЗадание №9: \nОтвет: %s\n", numericalSequence(15)));
     }
 }
 
