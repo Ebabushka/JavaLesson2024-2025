@@ -3,6 +3,12 @@ package org.example.antity;
 import java.time.LocalDate;
 import java.time.Period;
 
+/**
+ * Задание №1 и 3*: Написать класс Person с полями (имя, фамилия, отчество, дата рождения) и их getter / setter и использовать её в main.
+ * Дополнить класс Person полями (гражданство, пол, рост, вес), где обязательные поля только (имя, фамилия, дата рождения)
+ * и есть метод getAge(), который по текущему дню определяет количество полных лет.
+ */
+
 public class Person {
     private String name;
     private String surname;
@@ -99,7 +105,11 @@ public class Person {
             this.weight = 0.0;
         }
     }
-    public int age() {
+
+    /**
+     * @return возравщает количество полных лет.
+     */
+    public int getAge() {
         LocalDate today = LocalDate.now();
         return Period.between(dateOfBirth, today).getYears();
     }

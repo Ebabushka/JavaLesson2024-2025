@@ -25,7 +25,7 @@ public class App {
         logger.info(String.format("Пол: %s", person.getGender()));
         logger.info(String.format("Рост: %s", person.getHeight()));
         logger.info(String.format("Вес: %s", person.getWeight()));
-        logger.info(String.format("Возраст: %s", person.age()));
+        logger.info(String.format("Возраст: %s", person.getAge()));
         //калькулятор
         logger.info(String.format("Сложение: %s", CalCalych.addition(23.2,65.5)));
         logger.info(String.format("Вычетание: %s", CalCalych.deduction(25.6,5.5)));
