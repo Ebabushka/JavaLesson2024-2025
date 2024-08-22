@@ -14,6 +14,24 @@ public class Person {
     private String surname;
     private String middleName;
     private LocalDate dateOfBirth;
+    private String citizenship;
+    private String gender;
+    private Double height;
+    private Double weight;
+
+    public Person(String name, String surname, LocalDate dateOfBirth) {
+        this.name = name;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    /**
+     * @return возравщает количество полных лет.
+     */
+    public int getAge() {
+        LocalDate today = LocalDate.now();
+        return Period.between(dateOfBirth, today).getYears();
+    }
 
     public String getName() {
         return name;
@@ -46,17 +64,6 @@ public class Person {
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
-    public Person(String name, String surname, LocalDate dateOfBirth) {
-        this.name = name;
-        this.surname = surname;
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    private String citizenship;
-    private String gender;
-    private Double height;
-    private Double weight;
 
     public String getCitizenship() {
         return citizenship;
@@ -104,14 +111,6 @@ public class Person {
         } else {
             this.weight = 0.0;
         }
-    }
-
-    /**
-     * @return возравщает количество полных лет.
-     */
-    public int getAge() {
-        LocalDate today = LocalDate.now();
-        return Period.between(dateOfBirth, today).getYears();
     }
 }
 

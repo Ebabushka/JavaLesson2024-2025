@@ -9,9 +9,9 @@ import java.time.LocalDate;
 public class App {
     private static Logger logger = LoggerFactory.getLogger(App.class);
     public static void main(String[] args) {
-        Person person = new Person("Лука","Мудищев", LocalDate.of(2000,2,28));
-        person.setMiddleName("Дрочеславович");
-        person.setCitizenship("Ебатория");
+        Person person = new Person("Владимир","Вистаковский", LocalDate.of(2000,2,28));
+        person.setMiddleName("Вятчеславович");
+        person.setCitizenship("Беларусь");
         person.setGender("Мужской");
         //Рост в метрах
         person.setHeight(50.0);
