@@ -81,7 +81,7 @@ public class Person {
         if (gender.equals("Мужской") || gender.equals("Женский")) {
             this.gender = gender;
         } else {
-            this.gender = String.format("Вы ебаный мудак(чка)");
+            this.gender = String.format("Ошибка!");
         }
     }
 
