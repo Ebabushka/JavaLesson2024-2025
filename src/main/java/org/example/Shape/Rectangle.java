@@ -24,6 +24,7 @@ public class Rectangle extends Square {
 
     @Override
     public String square() {
-        return (String.format("Площадь прямоугольника: %s;", (getA() * b)));
+        Double decision = getA() * b;
+        return String.format("Площадь прямоугольника: %s;", decision);
     }
 }

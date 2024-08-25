@@ -24,6 +24,7 @@ public class Parallelogramm extends Square {
 
     @Override
     public String square() {
-        return String.format("Площадь параллелограмма: %s;", getA() * h);
+        Double decision = getA() * h;
+        return String.format("Площадь параллелограмма: %s;", decision);
     }
 }

@@ -9,10 +9,4 @@ public abstract class Shape {
     public String square() {
         return null;
     }
-
-    /**
-     * Выводит лог со значением площади той или иной фигуры
-     */
-    public void PrintArea() {
-    }
 }

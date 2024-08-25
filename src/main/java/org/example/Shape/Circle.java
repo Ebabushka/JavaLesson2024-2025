@@ -21,6 +21,7 @@ public class Circle extends Shape {
     }
 
     public String square() {
-        return String.format("Площадь круга: %s.", (3.1415 * r * r));
+        Double decision = 3.1415 * r * r;
+        return String.format("Площадь круга: %s.", decision);
     }
 }

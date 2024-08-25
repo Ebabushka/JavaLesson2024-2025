@@ -22,7 +22,8 @@ public class Square extends Shape {
 
     @Override
     public String square() {
-        return String.format("Площадь квадрата: %s;", (a * a));
+        Double decision = a * a;
+        return String.format("Площадь квадрата: %s;", decision);
     }
 }
 

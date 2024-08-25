@@ -18,6 +18,6 @@ public class Country extends Address {
 
     @Override
     public String address() {
-        return String.format("Страна: %s.", nameCountry);
+        return String.format("Адрес: %s;", nameCountry);
     }
 }

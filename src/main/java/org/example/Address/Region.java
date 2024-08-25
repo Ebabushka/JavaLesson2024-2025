@@ -20,6 +20,7 @@ public class Region extends Country {
 
     @Override
     public String address() {
-        return String.format("Страна: %s; Регион: %s.", getNameCountry(), nameRegion);
+        String stapler = super.address() + " " + nameRegion;
+        return String.format("%s;", stapler);
     }
 }

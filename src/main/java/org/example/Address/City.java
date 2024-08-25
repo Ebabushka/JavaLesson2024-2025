@@ -21,6 +21,7 @@ public class City extends Region {
 
     @Override
     public String address() {
-        return String.format("Адрес: %s; %s; %s.", getNameCountry(), getNameRegion(), nameCity);
+        String stapler = super.address() + " " + nameCity;
+        return String.format("%s;", stapler);
     }
 }

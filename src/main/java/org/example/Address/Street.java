@@ -22,6 +22,7 @@ public class Street extends City {
 
     @Override
     public String address() {
-        return String.format("Адрес: %s; %s; %s; %s.", getNameCountry(), getNameRegion(), getNameCity(), nameStreet);
+        String stapler = super.address() + " " + nameStreet;
+        return String.format("%s.", stapler);
     }
 }

@@ -14,6 +14,7 @@ public class RectangularTriangle extends Rectangle {
 
     @Override
     public String square() {
-        return String.format("Площадь прямоугольного треугольника: %s;", (0.5 * getA() * getB()));
+        Double decision = 0.5 * getA() * getB();
+        return String.format("Площадь прямоугольного треугольника: %s;", decision);
     }
 }
