@@ -1,10 +1,6 @@
 package org.example.Shape;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Circle extends Shape {
-    private static final Logger logger = LoggerFactory.getLogger(Parallelogramm.class);
     private Double r;
 
     /**
@@ -24,12 +20,7 @@ public class Circle extends Shape {
         return r;
     }
 
-    public Double square() {
-        return 3.1415 * r * r;
-    }
-
-    @Override
-    public void PrintArea() {
-        logger.info(String.format("Площадь круга: %s.", square()));
+    public String square() {
+        return String.format("Площадь круга: %s.", (3.1415 * r * r));
     }
 }

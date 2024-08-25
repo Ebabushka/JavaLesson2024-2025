@@ -9,10 +9,4 @@ public class Address {
     public String address() {
         return "";
     }
-
-    /**
-     * Выводит лог адреса.
-     */
-    public void printAddress() {
-    }
 }

@@ -3,9 +3,10 @@ package org.example.Shape;
 public abstract class Shape {
     /**
      * Рассчитывает площади заданных геометрических фигур.
+     *
      * @return возвращает значение площади заданных геометрических фигур.
      */
-    public Double square() {
+    public String square() {
         return null;
     }
 

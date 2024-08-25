@@ -1,11 +1,6 @@
 package org.example.Shape;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class Rectangle extends Square {
-    private static final Logger logger = LoggerFactory.getLogger(Rectangle.class);
-    private Double a;
     private Double b;
 
     /**
@@ -16,18 +11,11 @@ public class Rectangle extends Square {
      */
     public Rectangle(Double a, Double b) {
         super(a);
-        if (a > 0 && b > 0) {
-            this.a = a;
+        if (b > 0) {
             this.b = b;
         } else {
-            this.a = 0.0;
             this.b = 0.0;
         }
-    }
-
-    @Override
-    public Double getA() {
-        return a;
     }
 
     public Double getB() {
@@ -35,12 +23,7 @@ public class Rectangle extends Square {
     }
 
     @Override
-    public Double square() {
-        return a * b;
-    }
-
-    @Override
-    public void PrintArea() {
-        logger.info(String.format("Площадь прямоугольника: %s.", square()));
+    public String square() {
+        return (String.format("Площадь прямоугольника: %s;", (getA() * b)));
     }
 }
