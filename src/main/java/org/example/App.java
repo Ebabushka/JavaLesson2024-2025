@@ -13,17 +13,13 @@ public class App {
                 new Human("Шукшин Степан Ярославович", 32),
                 new Human("Семипалов Елизавета Геннадиевна", 29),
                 new Human("Абдуланон Саид Мурадович", 19)
-        };
 
-        Work[] work = new Work[]{
-                new Engineer("Инженер"),
-                new Cook("Повар"),
-                new Doctor("Доктор"),
-                new Loader("Грузчик")
         };
-        for (int i = 0; i < work.length; i++) {
-            logger.info(String.format("%s %s",human[i].human(), work[i].post()));
-        }
+        logger.info(String.format("%s", human[0].human1()));
+        logger.info(String.format("%s", human[1].human2()));
+        logger.info(String.format("%s", human[2].human3()));
+        logger.info(String.format("%s", human[3].human4()));
     }
 }
+
 
