@@ -1,18 +1,16 @@
 package org.example.Human;
 
 public class Engineer extends Work implements HigherEducation, MedicalBook {
-
     public Engineer(String work) {
         super(work);
     }
 
     @Override
     public String getHigherEducation() {
-        String title = "Диплом специалиста инженера";
-        Integer number = 2564;
-        Integer series = 45456585;
-        return String.format("Документ о высшем образовании: %s;\nНомер димплома: %s; \nСерия диплома: %s", title, number, series);
+        return "Требуется документ о высшем образовании";
     }
+
+    Document document = new Document("Диплом о высшем образовании Инжинера", 2459, 456985);
 
     @Override
     public String getMedicalBook() {
@@ -21,7 +19,7 @@ public class Engineer extends Work implements HigherEducation, MedicalBook {
 
     @Override
     public String post() {
-        return String.format("\nПрофессия: %s; \n%s; \n%s.\n", getWork(), getHigherEducation(), getMedicalBook());
+        return String.format("\nПрофессия: %s; \n%s: \n%s; \n%s.\n", getWork(), getHigherEducation(),document.document(), getMedicalBook());
     }
 }
 

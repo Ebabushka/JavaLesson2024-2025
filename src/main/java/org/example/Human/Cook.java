@@ -7,18 +7,18 @@ public class Cook extends Work implements HigherEducation, MedicalBook {
 
     @Override
     public String getHigherEducation() {
-        return "Диплом о высшем образовании не нужен.";
+        return "Документ о высшем образовании не требуется";
     }
 
     @Override
     public String getMedicalBook() {
-        String title = "Медицинская нижка";
-        Integer number = 25648546;
-        return String.format("%s;\nНомер медицинской книжки №: %s", title, number);
+        return "Требуется медицинская книжка";
     }
+
+    Document document = new Document("Медицинская книжка", 5687, 235987);
 
     @Override
     public String post() {
-        return String.format("\nПрофессия: %s; \n%s; \n%s.\n", getWork(), getHigherEducation(), getMedicalBook());
+        return String.format("\nПрофессия: %s; \n%s; \n%s: \n%s.\n", getWork(), getHigherEducation(), getMedicalBook(), document.document());
     }
 }

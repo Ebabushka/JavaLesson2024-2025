@@ -24,6 +24,6 @@ public class Document {
     }
 
     public String document() {
-        return String.format("\nНаименование документа: %s; \nНомер документа: %s; \nСерия документа: %s.", nameDocument, number.toString(), series.toString());
+        return String.format("Наименование документа: %s; \nНомер документа: %s; \nСерия документа: %s", nameDocument, number.toString(), series.toString());
     }
 }
