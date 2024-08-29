@@ -9,16 +9,15 @@ public class App {
 
     public static void main(String[] args) {
         Human[] human = {
-                new Human("Павлов Петр Евгеньевич", 25),
-                new Human("Шукшин Степан Ярославович", 32),
-                new Human("Семипалов Елизавета Геннадиевна", 29),
-                new Human("Абдуланон Саид Мурадович", 19)
+                new Human("Павлов Петр Евгеньевич", 25, "Инженер", new Engineer(new Document("Диплом о высшем образовании инженера", 2568, 148967))),
+                new Human("Шукшин Степан Ярославович", 32, "Повар", new Cook(new Document("Медицинская книжка", 4876, 287648))),
+                new Human("Семипалов Елизавета Геннадиевна", 29, "Доктор", new Doctor(new Document("Диплом о высшем образовании терапевта", 5914, 894756), new Document("Медицинская книжка", 8963, 896742))),
+                new Human("Абдуланон Саид Мурадович", 19, "Грузчик", new Loader())
 
         };
-        logger.info(String.format("%s", human[0].human1()));
-        logger.info(String.format("%s", human[1].human2()));
-        logger.info(String.format("%s", human[2].human3()));
-        logger.info(String.format("%s", human[3].human4()));
+        for (int i = 0; i < human.length; i++) {
+            logger.info(String.format("%s", human[i].human()));
+        }
     }
 }
 

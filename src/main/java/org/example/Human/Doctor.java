@@ -1,27 +1,32 @@
 package org.example.Human;
 
 public class Doctor extends Work implements HigherEducation, MedicalBook {
-    public Doctor(String work) {
-        super(work);
+    Document document1;
+    Document document2;
+
+    /**
+     * Конструктор профессии Доктора;
+     *
+     * @param document1 - возвращает документ Врачаа №1;
+     * @param document2 - возвращает документ Врачаа №2.
+     */
+    public Doctor(Document document1, Document document2) {
+        this.document1 = document1;
+        this.document2 = document2;
     }
 
     @Override
     public String getHigherEducation() {
-        return "Требуется документ о высшем образовании";
+        return document1.toString();
     }
-
-    Document document1 = new Document("Диплом о высшем образовании терапевта", 2368, 876521);
 
     @Override
     public String getMedicalBook() {
-        return "Требуется медицинская книжка";
+        return document2.toString();
     }
-
-    Document document2 = new Document("Медицинская книжка", 2489, 547936);
 
     @Override
     public String post() {
-        return String.format("\nПрофессия: %s; \n%s: \n%s; \n%s: \n%s. \n", getWork(), getHigherEducation(), document1.document(),
-        getMedicalBook(), document2.document());
+        return String.format("Документ #1: %s\nДокумент #2: %s.", document1.document(), document2.document());
     }
 }

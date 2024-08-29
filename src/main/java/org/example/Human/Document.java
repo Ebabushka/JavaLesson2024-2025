@@ -7,9 +7,10 @@ public class Document {
 
     /**
      * Конструктор для создания документа;
+     *
      * @param nameDocument - Введите название документа;
-     * @param number - Введите номер документа;
-     * @param series - Введите серию документа;
+     * @param number       - Введите номер документа;
+     * @param series       - Введите серию документа;
      */
 
     public Document(String nameDocument, Integer number, Integer series) {
@@ -32,6 +33,7 @@ public class Document {
 
     /**
      * Вывод информации о документе;
+     *
      * @return Возвращает информацию о документе.
      */
     public String document() {

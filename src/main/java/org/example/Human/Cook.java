@@ -1,24 +1,24 @@
 package org.example.Human;
 
-public class Cook extends Work implements HigherEducation, MedicalBook {
-    public Cook(String work) {
-        super(work);
-    }
+public class Cook extends Work implements MedicalBook {
+    Document document;
 
-    @Override
-    public String getHigherEducation() {
-        return "Документ о высшем образовании не требуется";
+    /**
+     * Конструктор профессии Повар;
+     *
+     * @param document - возвращает документ повара;
+     */
+    public Cook(Document document) {
+        this.document = document;
     }
 
     @Override
     public String getMedicalBook() {
-        return "Требуется медицинская книжка";
+        return document.toString();
     }
-
-    Document document = new Document("Медицинская книжка", 5687, 235987);
 
     @Override
     public String post() {
-        return String.format("\nПрофессия: %s; \n%s; \n%s: \n%s.\n", getWork(), getHigherEducation(), getMedicalBook(), document.document());
+        return String.format("Документ: %s.", document.document());
     }
 }

@@ -3,20 +3,22 @@ package org.example.Human;
 public class Human {
     private final String fullName;
     private final Integer age;
-    Engineer engineer = new Engineer("Инжинер");
-    Cook cook = new Cook("Повар");
-    Doctor doctor = new Doctor("Врач");
-    Loader loader = new Loader("Грузчик");
+    private final String profession;
+    Work work;
 
     /**
      * Конструктор ФИО и возраста человека;
      *
-     * @param fullName - введите ФИО человека;
-     * @param age      - введите возраст человека.
+     * @param fullName   - введите ФИО человека;
+     * @param age        - введите возраст человека;
+     * @param profession - введите название профессии;
+     * @param work       - введите документ.
      */
-    public Human(String fullName, Integer age) {
+    public Human(String fullName, Integer age, String profession, Work work) {
+        this.work = work;
         this.fullName = fullName;
         this.age = age;
+        this.profession = profession;
     }
 
     public String getFullName() {
@@ -27,24 +29,16 @@ public class Human {
         return age;
     }
 
+    public String getProfession() {
+        return profession;
+    }
+
     /**
-     * Метод отображения ФИО и возраста человека;
+     * Метод отображения ФИО, возраста человека, профессии, документов;
      *
-     * @return - Возвращает ФИО и возраст человека.
+     * @return - Возвращает ФИО и возраст человека, профессию, документы.
      */
-    public String human1() {
-        return String.format("\nФИО: %s;\nВозраст: %s; %s", fullName, age, engineer.post());
-    }
-
-    public String human2() {
-        return String.format("\nФИО: %s;\nВозраст: %s; %s", fullName, age, cook.post());
-    }
-
-    public String human3() {
-        return String.format("\nФИО: %s;\nВозраст: %s; %s", fullName, age, doctor.post());
-    }
-
-    public String human4() {
-        return String.format("\nФИО: %s;\nВозраст: %s; %s", fullName, age, loader.post());
+    public String human() {
+        return String.format("\nФИО: %s;\nВозраст: %s; \nПрофессия: %s; \n%s\n", fullName, age, profession, work.post());
     }
 }
