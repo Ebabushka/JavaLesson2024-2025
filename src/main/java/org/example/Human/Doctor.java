@@ -8,7 +8,7 @@ public class Doctor extends Work implements HigherEducation, MedicalBook {
      * Конструктор профессии Доктора;
      *
      * @param documentHigherEducation - возвращает документ Врачаа №1;
-     * @param document2 - возвращает документ Врачаа №2.
+     * @param documentMedicalBook - возвращает документ Врачаа №2.
      */
     public Doctor(Document documentHigherEducation, Document documentMedicalBook) {
         this.documentHigherEducation = documentHigherEducation;
@@ -27,6 +27,6 @@ public class Doctor extends Work implements HigherEducation, MedicalBook {
 
     @Override
     public String requiredDocuments() {
-        return String.format("Документ #1: %s\nДокумент #2: %s.", documentHigherEducation.document(), documentMedicalBook.document());
+        return String.format("Документ №1: %s;\nДокумент №2: %s.", documentHigherEducation.document(), documentMedicalBook.document());
     }
 }

@@ -7,10 +7,10 @@ public class Engineer extends Work implements HigherEducation {
     /**
      * Конструктор профессии Инжинер;
      *
-     * @param document - возвращает документ инженера;
+     * @param documentHigherEducation - возвращает документ инженера;
      */
-    public Engineer(Document document) {
-        this.documentHigherEducation = document;
+    public Engineer(Document documentHigherEducation) {
+        this.documentHigherEducation = documentHigherEducation;
     }
 
     @Override
