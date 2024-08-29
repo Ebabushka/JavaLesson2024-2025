@@ -1,24 +1,24 @@
 package org.example.Human;
 
 public class Cook extends Work implements MedicalBook {
-    Document document;
+    private final Document documentMedicalBook;
 
     /**
      * Конструктор профессии Повар;
      *
-     * @param document - возвращает документ повара;
+     * @param documentMedicalBook - возвращает документ повара;
      */
-    public Cook(Document document) {
-        this.document = document;
+    public Cook(Document documentMedicalBook) {
+        this.documentMedicalBook = documentMedicalBook;
     }
 
     @Override
-    public String getMedicalBook() {
-        return document.toString();
+    public Document getMedicalBook() {
+        return documentMedicalBook;
     }
 
     @Override
-    public String post() {
-        return String.format("Документ: %s.", document.document());
+    public String requiredDocuments() {
+        return String.format("Документ: %s.", documentMedicalBook.document());
     }
 }

@@ -2,7 +2,7 @@ package org.example.Human;
 
 public class Engineer extends Work implements HigherEducation {
 
-    Document document;
+    private final Document documentHigherEducation;
 
     /**
      * Конструктор профессии Инжинер;
@@ -10,17 +10,17 @@ public class Engineer extends Work implements HigherEducation {
      * @param document - возвращает документ инженера;
      */
     public Engineer(Document document) {
-        this.document = document;
+        this.documentHigherEducation = document;
     }
 
     @Override
-    public String getHigherEducation() {
-        return document.toString();
+    public Document getHigherEducation() {
+        return documentHigherEducation;
     }
 
     @Override
-    public String post() {
-        return String.format("Документ: %s.", document.document());
+    public String requiredDocuments() {
+        return String.format("Документ: %s.", documentHigherEducation.document());
     }
 }
 

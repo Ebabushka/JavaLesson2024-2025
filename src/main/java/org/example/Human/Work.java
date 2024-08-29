@@ -7,7 +7,7 @@ public abstract class Work {
      *
      * @return - возвращает профессию.
      */
-    public String post() {
+    public String requiredDocuments () {
         return " ";
     }
 }

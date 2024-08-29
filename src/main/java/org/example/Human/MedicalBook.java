@@ -6,5 +6,5 @@ public interface MedicalBook {
      *
      * @return возвращает требование к документу об образовании или говорит об отсутсвии для него требований.
      */
-    String getMedicalBook();
+    Document getMedicalBook();
 }

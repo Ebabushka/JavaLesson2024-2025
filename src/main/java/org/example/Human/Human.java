@@ -4,7 +4,7 @@ public class Human {
     private final String fullName;
     private final Integer age;
     private final String profession;
-    Work work;
+    private final Work work;
 
     /**
      * Конструктор ФИО и возраста человека;
@@ -39,6 +39,6 @@ public class Human {
      * @return - Возвращает ФИО и возраст человека, профессию, документы.
      */
     public String human() {
-        return String.format("\nФИО: %s;\nВозраст: %s; \nПрофессия: %s; \n%s\n", fullName, age, profession, work.post());
+        return String.format("\nФИО: %s;\nВозраст: %s; \nПрофессия: %s; \n%s\n", fullName, age, profession, work.requiredDocuments());
     }
 }

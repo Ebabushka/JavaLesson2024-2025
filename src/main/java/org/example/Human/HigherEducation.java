@@ -6,5 +6,5 @@ public interface HigherEducation {
      *
      * @return возвращает требование к медицинской книжке или говорит об отсутсвии для неё требований.
      */
-    String getHigherEducation();
+    Document getHigherEducation();
 }
