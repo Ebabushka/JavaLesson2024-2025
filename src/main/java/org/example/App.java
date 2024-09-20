@@ -53,8 +53,7 @@ public class App {
         logger.info(String.format("Умножение: %.2f", Calculate.multiplication(22.5, -5.6)));
         try {
             logger.info(String.format("Деление: %.2f", Calculate.division(2.0, 0.0)));
-        } catch (
-                DivisionByZeroError s) {
+        } catch (DivisionByZeroError s) {
             logger.info("Деление на 0 невозможно.");
             throw s;
         }
