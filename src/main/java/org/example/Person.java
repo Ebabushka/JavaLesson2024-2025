@@ -1,6 +1,5 @@
 package org.example;
 
-import java.time.LocalDate;
 import java.util.Objects;
 
 public class Person {
@@ -35,9 +34,8 @@ public class Person {
         return Objects.hash(fullName.toLowerCase(), dateOfBirth.toLowerCase(), birthCity.toLowerCase());
     }
 
-    @Override
-    public String toString() {
-        return fullName + " " + dateOfBirth + " " + mobileNumber + " " + hairColor + " " + birthCity;
+    public String String() {
+        return String.format("%s, %s, %s, %s.", fullName, dateOfBirth, mobileNumber, hairColor, birthCity);
     }
 }
 
