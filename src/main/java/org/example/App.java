@@ -8,9 +8,8 @@ public class App {
 
     public static void main(String[] args){
 
-        logger.debug("Debug log message");
-        logger.info("Info log message");
-        logger.error("Error log message");
-
+Person person1 = new Person("Иванов Иван Иванович","05.11.1990", "+78005553535", "Голубой", "Уфа");
+Person person2 = new Person("Иванова Ирина Ивановна","24.05.1980", "+783405553535", "Розовый", "Самара");
+logger.info(String.format("%s", person1.equals(person2)));
     }
 }
